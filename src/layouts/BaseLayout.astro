@@ -7,6 +7,7 @@ interface Props {
 }
 
 const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base.endsWith('/') ? base : `${base}/`}${path}`;
 const {
   title = 'Le Rendez-vous de Décembre — Lubumbashi',
   description = 'Exposez. Connectez. Soyez reconnus. Événement pour entrepreneurs et prestataires de services à Lubumbashi — décembre 2026.',
@@ -19,12 +20,12 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0a0c0b" />
-    <link rel="icon" type="image/png" href={`${base}brand/logoRDVD_vertical_compact.png`} />
+    <meta name="theme-color" content="#0e5c3c" />
+    <link rel="icon" type="image/png" href={asset('brand/logoRDVD_vertical_compact.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>

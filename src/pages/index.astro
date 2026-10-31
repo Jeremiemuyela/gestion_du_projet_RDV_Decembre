@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 
 const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base.endsWith('/') ? base : `${base}/`}${path}`;
 const email = 'rendezvousdedecembre@gmail.com';
 ---
 
@@ -10,7 +12,7 @@ const email = 'rendezvousdedecembre@gmail.com';
     <div class="wrap site-header__inner">
       <a class="brand-lockup" href={`${base}`}>
         <img
-          src={`${base}brand/logoRDVD_hor_compact.png`}
+          src={asset('brand/logoRDVD_hor_compact.png')}
           alt="Le Rendez-vous de Décembre"
           width="220"
           height="64"
@@ -20,6 +22,7 @@ const email = 'rendezvousdedecembre@gmail.com';
         <a href="#programme">Programme</a>
         <a href="#pourquoi">Pourquoi venir</a>
         <a href="#vote">Vote &amp; Gala</a>
+        <a href="#billet">Billet</a>
         <a href="#inscription">Inscription</a>
         <a href="#equipe">Équipe</a>
       </nav>
@@ -29,54 +32,86 @@ const email = 'rendezvousdedecembre@gmail.com';
 
   <main id="contenu">
     <section class="hero">
-      <div class="wrap hero__content reveal">
-        <p class="eyebrow">Lubumbashi · Décembre 2026</p>
-        <h1>Exposez. Connectez.<br /><span>Soyez reconnus.</span></h1>
-        <p class="lead">
-          Le rendez-vous de fin d’année pour les entrepreneurs et prestataires de services :
-          trois jours pour agrandir votre réseau, ouvrir des partenariats et trouver de la
-          clientèle — sans vous sentir petits.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#inscription">Réserver un stand</a>
-          <a class="btn btn-ghost" href="#programme">Voir le programme</a>
+      <div class="wrap hero__layout">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Lubumbashi · Décembre 2026</p>
+          <h1>
+            Osez vous montrer et tisser des réseaux pour enfin obtenir la reconnaissance que vous
+            méritez.
+          </h1>
+          <div class="cta-stack">
+            <div class="cta-row">
+              <a class="btn btn-stand" href="#inscription">
+                <Icon name="stand" />
+                <span>Réserver votre stand</span>
+              </a>
+              <a class="btn btn-programme" href="#programme">
+                <Icon name="agenda" />
+                <span>Voir le programme</span>
+              </a>
+            </div>
+            <a class="btn btn-ticket" href="#billet">
+              <Icon name="bow" />
+              <span>Acheter votre billet</span>
+            </a>
+          </div>
         </div>
-        <p class="pillars" aria-label="Piliers de l’événement">
-          <span>Réseauter</span>
-          <span>Exposer</span>
-          <span>Se développer</span>
-        </p>
+        <figure class="hero__mark logo-build">
+          <span class="logo-build__stage">
+            <img
+              class="logo-build__piece logo-build__green"
+              src={asset('brand/parts/logo-green.png')}
+              alt=""
+              width="1024"
+              height="1536"
+            />
+            <img
+              class="logo-build__piece logo-build__red"
+              src={asset('brand/parts/logo-red.png')}
+              alt=""
+              width="1024"
+              height="1536"
+            />
+            <img
+              class="logo-build__piece logo-build__gold"
+              src={asset('brand/parts/logo-gold.png')}
+              alt=""
+              width="1024"
+              height="1536"
+            />
+            <img
+              class="logo-build__piece logo-build__name"
+              src={asset('brand/parts/logo-name.png')}
+              alt="Emblème Le Rendez-vous de Décembre : rubans or, vert et rouge, étoile dorée."
+              width="1024"
+              height="1536"
+            />
+          </span>
+        </figure>
       </div>
     </section>
 
-    <section class="section" id="pourquoi">
+    <section class="section section--green" id="pourquoi">
       <div class="wrap">
         <div class="section__head reveal">
-          <h2>Un salon pensé pour les services</h2>
-          <p>
-            À Lubumbashi, les foires mettent souvent en avant produits et artisanat. Ici, la
-            priorité va aux métiers de service : visibilité, contacts utiles et reconnaissance
-            publique.
-          </p>
+          <h2>Pourquoi venir</h2>
         </div>
-        <div class="split reveal">
-          <div>
-            <p>
-              <strong>Visiteurs :</strong> entrée libre pour tous les résidents de Lubumbashi et
-              curieux d’affaires — découvrir, rencontrer, recommander.
-            </p>
-            <p>
-              <strong>Exposants :</strong> participation payante (tarif sur demande), avec
-              inscription en ligne puis validation après paiement.
-            </p>
-          </div>
-          <aside class="note">
-            <strong>Positionnement</strong>
-            <p style="margin:0.5rem 0 0;color:var(--cream-muted)">
-              Trois journées structurées + vote du public + Gala des entrepreneurs : un cadre
-              sérieux, chaleureux, digne de votre activité.
-            </p>
-          </aside>
+        <div class="audiences audiences--3 reveal">
+          <article class="audience audience--green">
+            <span class="chip chip--green"><Icon name="stand" /></span>
+            <h3>Vous montrer</h3>
+            <p>Votre service, en face du public.</p>
+          </article>
+          <article class="audience audience--gold">
+            <span class="chip chip--gold"><Icon name="network" /></span>
+            <h3>Tisser</h3>
+            <p>Des rencontres choisies.</p>
+          </article>
+          <article class="audience audience--red">
+            <span class="chip chip--red"><Icon name="trophy" /></span>
+            <h3>Être reconnu</h3>
+            <p>Le vote du public, puis les trophées au Gala.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -84,64 +119,126 @@ const email = 'rendezvousdedecembre@gmail.com';
     <section class="section" id="programme">
       <div class="wrap">
         <div class="section__head reveal">
-          <h2>Programme sur trois jours</h2>
-          <p>
-            Dates et lieu à confirmer. Activités de journée (ex. 9 h–17 h). Seul le Gala du
-            troisième jour se déroule en soirée.
-          </p>
+          <h2>Programme</h2>
+          <p>Le même fil, chaque jour.</p>
         </div>
-        <div class="days reveal">
-          <article class="day">
+        <ul class="facts reveal">
+          <li><span>Dates</span> À confirmer</li>
+          <li><span>Lieu</span> À confirmer</li>
+        </ul>
+        <div class="days">
+          <article class="day day--gold reveal">
+            <span class="chip chip--gold"><Icon name="users" /></span>
             <div class="day__meta">
-              <strong>Jour 1</strong>
-              <span class="day__tag">Exposer</span>
+              <strong>Exposition</strong>
             </div>
-            <p>
-              Ouverture des stands, présentation des offres, premiers contacts avec visiteurs,
-              clients et partenaires.
-            </p>
+            <p>Rencontre directe avec les visiteurs.</p>
           </article>
-          <article class="day">
+          <article class="day day--green reveal">
+            <span class="chip chip--green"><Icon name="agenda" /></span>
             <div class="day__meta">
-              <strong>Jour 2</strong>
-              <span class="day__tag">Connecter &amp; voter</span>
+              <strong>Salon d’échange</strong>
             </div>
-            <p>
-              Speed-networking, rencontres B2B, démonstrations, mini-formations et vote des
-              visiteurs pour le meilleur stand ou service.
-            </p>
+            <p>Rencontres programmées par les organisateurs.</p>
           </article>
-          <article class="day">
+          <article class="day day--red reveal">
+            <span class="chip chip--red"><Icon name="pair" /></span>
             <div class="day__meta">
-              <strong>Jour 3</strong>
-              <span class="day__tag">Valoriser &amp; célébrer</span>
+              <strong>Défense</strong>
             </div>
-            <p>
-              Exposition en journée, clôture du scrutin, puis Gala des entrepreneurs : résultats,
-              distinctions, cocktail et réseautage festif.
-            </p>
+            <p>Votre service, face à un pair.</p>
           </article>
+        </div>
+        <div class="gala-band reveal">
+          <p class="gala-band__label">Jour du Gala</p>
+          <ul class="hours">
+            <li><Icon name="clock" /> <span>Jusqu’à 14 h</span> Exposition</li>
+            <li><Icon name="clock" /> <span>Dès 16 h</span> Gala</li>
+          </ul>
+          <ul class="gala-bits">
+            <li><Icon name="network" /> Entre exposants</li>
+            <li><Icon name="ballot" /> Bilan et votes</li>
+            <li><Icon name="trophy" /> Trophées</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="vote">
-      <div class="wrap split reveal">
-        <div class="section__head" style="margin-bottom:0">
-          <h2>Vote du public &amp; Gala</h2>
-          <p>
-            Les visiteurs votent selon des critères annoncés. Les résultats sont proclamés au
-            Gala — une reconnaissance symbolique qui met en lumière les services qui ont marqué
-            l’édition.
-          </p>
+    <section class="section section--red" id="vote">
+      <div class="wrap split">
+        <div class="section__head reveal">
+          <h2>Vote &amp; Gala</h2>
+          <p>Le vote se fait ici. Les trophées, au Gala.</p>
         </div>
-        <aside class="note">
-          <strong>Pour les exposants</strong>
-          <p style="margin:0.5rem 0 0;color:var(--cream-muted)">
-            Visibilité sur trois jours, opportunités de partenariats, et une soirée pour célébrer
-            le travail accompli — à hauteur d’entrepreneurs.
-          </p>
-        </aside>
+        <div class="vote-panel reveal">
+          <form class="form" action={`https://formsubmit.co/${email}`} method="POST">
+            <input type="hidden" name="_subject" value="Vote public — RDV Décembre" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <label>
+              Votre nom
+              <input type="text" name="nom" required autocomplete="name" maxlength="120" />
+            </label>
+            <label>
+              Stand ou service choisi
+              <input type="text" name="choix" required maxlength="160" />
+            </label>
+            <button class="btn btn-programme" type="submit">
+              <Icon name="ballot" />
+              <span>Envoyer mon vote</span>
+            </button>
+          </form>
+          <a class="btn btn-ticket" href="#billet">
+            <Icon name="bow" />
+            <span>Acheter votre billet</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="billet">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Billet</h2>
+          <p>Tarif sur demande. Le billet se prend ici.</p>
+        </div>
+        <div class="split">
+          <form class="form reveal" action={`https://formsubmit.co/${email}`} method="POST">
+            <input type="hidden" name="_subject" value="Achat billet — RDV Décembre" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <label>
+              Nom complet
+              <input type="text" name="nom" required autocomplete="name" maxlength="120" />
+            </label>
+            <label>
+              Téléphone WhatsApp
+              <input type="tel" name="telephone" required autocomplete="tel" maxlength="30" />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" required autocomplete="email" maxlength="120" />
+            </label>
+            <label>
+              Nombre de billets
+              <input type="number" name="billets" required min="1" max="20" value="1" />
+            </label>
+            <p class="form__hint">
+              Après envoi, écrivez à
+              <a href={`mailto:${email}`}>{email}</a>
+              pour le paiement : espèce ou Mobile Money.
+            </p>
+            <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+          </form>
+          <aside class="note reveal">
+            <strong>Paiement</strong>
+            <ul class="pay-list">
+              <li><Icon name="cash" /> Espèce</li>
+              <li><Icon name="phone" /> M-Pesa · Airtel Money · Orange Money</li>
+              <li><Icon name="info" /> Numéros communiqués après demande</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -156,9 +253,9 @@ const email = 'rendezvousdedecembre@gmail.com';
           </p>
         </div>
 
-        <div class="split reveal">
+        <div class="split">
           <form
-            class="form"
+            class="form reveal"
             action={`https://formsubmit.co/${email}`}
             method="POST"
           >
@@ -197,33 +294,42 @@ const email = 'rendezvousdedecembre@gmail.com';
             <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
           </form>
 
-          <aside class="note">
+          <aside class="note reveal">
             <strong>Paiement</strong>
-            <ul style="margin:0.75rem 0 0;padding-left:1.1rem;color:var(--cream-muted)">
-              <li>Espèce</li>
-              <li>M-Pesa · Airtel Money · Orange Money</li>
-              <li>Pas de virement bancaire pour cette édition</li>
-              <li>Numéros Mobile Money : à préciser</li>
+            <ul class="pay-list">
+              <li><Icon name="cash" /> Espèce</li>
+              <li><Icon name="phone" /> M-Pesa · Airtel Money · Orange Money</li>
+              <li><Icon name="info" /> Pas de virement bancaire pour cette édition</li>
+              <li><Icon name="info" /> Numéros Mobile Money : à préciser</li>
             </ul>
-            <p style="margin:1rem 0 0;color:var(--cream-muted)">
-              Entrée visiteurs : <strong style="color:var(--cream)">gratuite</strong>.
+            <p class="free-entry">
+              <Icon name="bow" />
+              <a href="#billet">Le billet s’achète sur cette page.</a>
             </p>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="equipe">
+    <section class="section section--green" id="equipe">
       <div class="wrap">
         <div class="section__head reveal">
           <h2>Organisation</h2>
           <p>Une équipe locale pour un événement sérieux, accueillant et bien tenu.</p>
         </div>
-        <div class="people reveal">
-          <div class="person"><strong>Uriel Deborah</strong><span>Organisation</span></div>
-          <div class="person"><strong>Jeremie Muyela</strong><span>Organisation</span></div>
-          <div class="person"><strong>Jason Kalaba</strong><span>Organisation</span></div>
-          <div class="person"><strong>Nathan Bondo</strong><span>Organisation</span></div>
+        <div class="people">
+          <article class="person person--gold reveal">
+            <strong>Uriel Deborah</strong><span>Organisation</span>
+          </article>
+          <article class="person person--green reveal">
+            <strong>Jeremie Muyela</strong><span>Organisation</span>
+          </article>
+          <article class="person person--red reveal">
+            <strong>Jason Kalaba</strong><span>Organisation</span>
+          </article>
+          <article class="person person--gold reveal">
+            <strong>Nathan Bondo</strong><span>Organisation</span>
+          </article>
         </div>
       </div>
     </section>
@@ -232,14 +338,59 @@ const email = 'rendezvousdedecembre@gmail.com';
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
       <div>
-        <strong style="color:var(--cream)">Le Rendez-vous de Décembre</strong>
-        <p style="margin:0.35rem 0 0">Lubumbashi · Décembre 2026 · Dates et lieu à confirmer</p>
-        <p style="margin:0.35rem 0 0">
-          Contact :
+        <strong class="footer-brand">Le Rendez-vous de Décembre</strong>
+        <p>Lubumbashi · Décembre 2026</p>
+        <ul class="facts facts--footer">
+          <li><span>Dates</span> À confirmer</li>
+          <li><span>Lieu</span> À confirmer</li>
+        </ul>
+        <p>
           <a href={`mailto:${email}`}>{email}</a>
         </p>
       </div>
-      <p style="margin:0">LinkedIn · TikTok · Instagram — bientôt</p>
+      <div class="footer-social">
+      <ul class="socials">
+        <li>
+          <Icon name="linkedin" />
+          LinkedIn
+        </li>
+        <li>
+          <Icon name="tiktok" />
+          TikTok
+        </li>
+        <li>
+          <Icon name="instagram" />
+          Instagram
+        </li>
+      </ul>
+      <p class="socials__note">Adresses à venir</p>
+      </div>
     </div>
   </footer>
 </BaseLayout>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.nav a')];
+  const pairs = links.flatMap((link) => {
+    const id = link.getAttribute('href')?.slice(1);
+    const section = id ? document.getElementById(id) : null;
+    return section ? [{ link, section }] : [];
+  });
+
+  const mark = () => {
+    const line = window.scrollY + 140;
+    let current: (typeof pairs)[number] | undefined;
+    for (const pair of pairs) {
+      if (pair.section.offsetTop <= line) current = pair;
+    }
+    for (const pair of pairs) {
+      if (pair === current) pair.link.setAttribute('aria-current', 'true');
+      else pair.link.removeAttribute('aria-current');
+    }
+  };
+
+  if (pairs.length) {
+    mark();
+    window.addEventListener('scroll', mark, { passive: true });
+  }
+</script>
