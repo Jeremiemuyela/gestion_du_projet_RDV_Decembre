@@ -1,0 +1,19 @@
+---
+description: Qualité visuelle, UX et cohérence de l'interface — exigence High.
+globs: "**/*.{tsx,jsx,css,scss,html,astro,vue,svelte}"
+alwaysApply: false
+---
+# Design Quality — High
+
+- Avant de concevoir, identifie le produit, son public, le contexte d'usage et l'action principale de chaque écran.
+- Établis une hiérarchie visuelle nette : une intention principale par zone, titres lisibles, espacements cohérents et densité maîtrisée.
+- Définis des tokens cohérents pour couleurs, typographie, espacements, rayons, bordures, ombres et états.
+- Choisis une palette limitée et justifiée par la marque et le contexte ; vérifie les contrastes.
+- Utilise une typographie avec une échelle claire et des longueurs de ligne confortables.
+- Crée des composants cohérents pour boutons, champs, cartes, navigation, alertes et dialogues.
+- Soigne les états hover, focus, active, disabled, loading, empty et error.
+- Évite le rendu générique : ne répète pas sans raison les mêmes hero, cartes, gradients, badges et effets décoratifs.
+- Privilégie une composition simple et intentionnelle ; chaque élément doit avoir une fonction.
+- Les animations sont sobres, rapides et utiles. Respecte `prefers-reduced-motion`.
+- Vérifie les écrans sur mobile, tablette et desktop et, si possible, utilise des captures pour inspecter le rendu réel.
+- Ne sacrifie jamais la lisibilité, l'accessibilité ou la performance au bénéfice de l'esthétique.

@@ -1,0 +1,16 @@
+---
+description: Performance web, optimisation et Core Web Vitals.
+globs: "**/*.{ts,tsx,js,jsx,css,scss,html,astro,vue,svelte}"
+alwaysApply: false
+---
+# Performance Web
+
+- Mesure avant d'optimiser ; identifie le goulot d'étranglement au lieu de deviner.
+- Réduis le JavaScript envoyé au navigateur et privilégie le rendu serveur ou statique lorsque pertinent.
+- Optimise les images : dimensions adaptées, formats modernes, compression, lazy loading hors écran et chargement prioritaire du visuel principal.
+- Évite les dépendances lourdes et le travail coûteux sur le thread principal.
+- Préviens les layout shifts en réservant l'espace des médias et contenus asynchrones.
+- Utilise cache, pagination et chargement progressif selon les besoins.
+- Évite les re-renders inutiles, mais ne complexifie pas le code avec une mémoïsation prématurée.
+- Vérifie les performances sur mobile et réseau lent.
+- Rapporte les mesures réellement obtenues ; ne prétends pas qu'un score est garanti.

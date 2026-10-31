@@ -1,0 +1,16 @@
+---
+description: API, services backend, persistance et logique métier.
+globs: "**/*.{ts,js,mts,cts,py,cs,go,java,php}"
+alwaysApply: false
+---
+# Backend Engineering
+
+- Organise le backend autour de responsabilités explicites : routes/controllers, services métier, accès aux données et adaptateurs.
+- Valide les entrées côté serveur et retourne des erreurs cohérentes sans divulguer les détails internes.
+- Applique authentification et autorisation à chaque opération protégée ; cacher un bouton ne constitue pas un contrôle d'accès.
+- Utilise des transactions pour les opérations multi-écritures qui doivent rester cohérentes.
+- Prévois pagination, limites, timeouts et gestion des erreurs pour les opérations coûteuses ou externes.
+- Évite la logique métier dans les contrôleurs et les composants d'interface.
+- Utilise des requêtes paramétrées ou un ORM correctement configuré.
+- Documente les contrats API et garde la compatibilité des clients à l'esprit.
+- Ne modifie pas les données réelles et ne lance pas de migration destructive sans autorisation explicite.

@@ -1,0 +1,17 @@
+---
+description: Standards TypeScript et JavaScript pour le code applicatif.
+globs: "**/*.{ts,tsx,js,jsx,mts,cts}"
+alwaysApply: false
+---
+# TypeScript et JavaScript
+
+- Préfère TypeScript strict lorsque le projet le permet ; ne désactive pas `strict` pour contourner une erreur.
+- Évite `any`. Utilise `unknown` puis affine le type, ou définis des types explicites.
+- Modélise les états avec des unions discriminées lorsque cela améliore la sûreté.
+- Évite les assertions `as` non justifiées et les non-null assertions.
+- Garde les fonctions focalisées, les noms explicites et les effets de bord visibles.
+- Valide les données provenant d'API, formulaires, URL, fichiers et services externes à la frontière du système.
+- Distingue les types métier des formes de transport lorsque leurs responsabilités diffèrent.
+- Ne duplique pas les types générés ; respecte le mécanisme de génération du projet.
+- Gère explicitement les erreurs asynchrones et les états de chargement.
+- Respecte le lint, le formatage et les conventions déjà configurés.

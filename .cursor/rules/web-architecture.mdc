@@ -1,0 +1,16 @@
+---
+description: Architecture, structure et décisions techniques pour les projets web (installer uniquement dans un dépôt Web).
+alwaysApply: true
+---
+# Architecture Web
+
+- S'applique aux dépôts Web uniquement ; ne pas installer cette règle dans un projet Odoo ou non-Web.
+- Inspecte d'abord la structure, le README, les manifestes, les scripts, les conventions et les dépendances du dépôt.
+- Respecte l'architecture existante si elle est saine ; ne réécris pas le projet sans besoin démontré.
+- Sépare clairement interface, logique métier, accès aux données et intégrations externes.
+- Définis des frontières de modules explicites et évite les dépendances circulaires.
+- Évite la sur-ingénierie : pas de microservices, d'architecture complexe ou d'abstraction générique sans exigence concrète.
+- Documente les décisions structurantes et leurs compromis dans un ADR ou le README lorsque cela apporte une valeur durable.
+- Stack de référence : React/Next.js/TypeScript ; Vite ou Astro selon le besoin. Ce sont des options, pas des exigences.
+- Pour toute nouvelle dépendance, justifie son utilité, vérifie sa maintenance et préfère une solution déjà présente si elle convient.
+- Ne change pas de framework, de base de données ou de système de build sans expliquer l'impact et obtenir confirmation si le changement est majeur.

@@ -1,0 +1,16 @@
+---
+description: Sécurité applicative Web (XSS, CSRF, secrets, auth serveur) — projets web uniquement.
+alwaysApply: true
+---
+# Web Security Standards
+
+- Considère toute entrée utilisateur, tout fichier, toute réponse externe et toute donnée du navigateur comme non fiable.
+- Valide et normalise les entrées côté serveur ; encode les sorties selon leur contexte.
+- Vérifie les permissions côté serveur pour chaque ressource et action.
+- Protège les secrets dans des variables d'environnement ou un gestionnaire de secrets ; ne les expose jamais au client.
+- N'enregistre pas de mots de passe, tokens, clés, données personnelles ou payloads sensibles dans les logs.
+- Utilise les protections adaptées contre XSS, CSRF, injection, SSRF, traversal et abus de ressources selon le contexte.
+- Applique des cookies sécurisés (HttpOnly, Secure, SameSite) lorsque pertinents et une gestion de session robuste.
+- Limite les tentatives, tailles de requête et opérations coûteuses sur les endpoints exposés.
+- Ne désactive jamais TLS, CORS, CSP, authentification ou contrôles d'accès comme solution permanente.
+- Signale les vulnérabilités trouvées et propose une correction ciblée ; n'exécute pas d'action offensive sur des systèmes tiers.

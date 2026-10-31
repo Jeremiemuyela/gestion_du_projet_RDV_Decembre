@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const email = 'rendezvousdedecembre@gmail.com';
+---
+
+<BaseLayout>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand-lockup" href={`${base}`}>
+        <img
+          src={`${base}brand/logoRDVD_hor_compact.png`}
+          alt="Le Rendez-vous de Décembre"
+          width="220"
+          height="64"
+        />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#programme">Programme</a>
+        <a href="#pourquoi">Pourquoi venir</a>
+        <a href="#vote">Vote &amp; Gala</a>
+        <a href="#inscription">Inscription</a>
+        <a href="#equipe">Équipe</a>
+      </nav>
+      <a class="btn btn-primary" href="#inscription">Devenir exposant</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="wrap hero__content reveal">
+        <p class="eyebrow">Lubumbashi · Décembre 2026</p>
+        <h1>Exposez. Connectez.<br /><span>Soyez reconnus.</span></h1>
+        <p class="lead">
+          Le rendez-vous de fin d’année pour les entrepreneurs et prestataires de services :
+          trois jours pour agrandir votre réseau, ouvrir des partenariats et trouver de la
+          clientèle — sans vous sentir petits.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#inscription">Réserver un stand</a>
+          <a class="btn btn-ghost" href="#programme">Voir le programme</a>
+        </div>
+        <p class="pillars" aria-label="Piliers de l’événement">
+          <span>Réseauter</span>
+          <span>Exposer</span>
+          <span>Se développer</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="pourquoi">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Un salon pensé pour les services</h2>
+          <p>
+            À Lubumbashi, les foires mettent souvent en avant produits et artisanat. Ici, la
+            priorité va aux métiers de service : visibilité, contacts utiles et reconnaissance
+            publique.
+          </p>
+        </div>
+        <div class="split reveal">
+          <div>
+            <p>
+              <strong>Visiteurs :</strong> entrée libre pour tous les résidents de Lubumbashi et
+              curieux d’affaires — découvrir, rencontrer, recommander.
+            </p>
+            <p>
+              <strong>Exposants :</strong> participation payante (tarif sur demande), avec
+              inscription en ligne puis validation après paiement.
+            </p>
+          </div>
+          <aside class="note">
+            <strong>Positionnement</strong>
+            <p style="margin:0.5rem 0 0;color:var(--cream-muted)">
+              Trois journées structurées + vote du public + Gala des entrepreneurs : un cadre
+              sérieux, chaleureux, digne de votre activité.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programme">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Programme sur trois jours</h2>
+          <p>
+            Dates et lieu à confirmer. Activités de journée (ex. 9 h–17 h). Seul le Gala du
+            troisième jour se déroule en soirée.
+          </p>
+        </div>
+        <div class="days reveal">
+          <article class="day">
+            <div class="day__meta">
+              <strong>Jour 1</strong>
+              <span class="day__tag">Exposer</span>
+            </div>
+            <p>
+              Ouverture des stands, présentation des offres, premiers contacts avec visiteurs,
+              clients et partenaires.
+            </p>
+          </article>
+          <article class="day">
+            <div class="day__meta">
+              <strong>Jour 2</strong>
+              <span class="day__tag">Connecter &amp; voter</span>
+            </div>
+            <p>
+              Speed-networking, rencontres B2B, démonstrations, mini-formations et vote des
+              visiteurs pour le meilleur stand ou service.
+            </p>
+          </article>
+          <article class="day">
+            <div class="day__meta">
+              <strong>Jour 3</strong>
+              <span class="day__tag">Valoriser &amp; célébrer</span>
+            </div>
+            <p>
+              Exposition en journée, clôture du scrutin, puis Gala des entrepreneurs : résultats,
+              distinctions, cocktail et réseautage festif.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vote">
+      <div class="wrap split reveal">
+        <div class="section__head" style="margin-bottom:0">
+          <h2>Vote du public &amp; Gala</h2>
+          <p>
+            Les visiteurs votent selon des critères annoncés. Les résultats sont proclamés au
+            Gala — une reconnaissance symbolique qui met en lumière les services qui ont marqué
+            l’édition.
+          </p>
+        </div>
+        <aside class="note">
+          <strong>Pour les exposants</strong>
+          <p style="margin:0.5rem 0 0;color:var(--cream-muted)">
+            Visibilité sur trois jours, opportunités de partenariats, et une soirée pour célébrer
+            le travail accompli — à hauteur d’entrepreneurs.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="inscription">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Inscription exposant</h2>
+          <p>
+            Remplissez le formulaire. Réglez en espèce ou Mobile Money (M-Pesa, Airtel Money,
+            Orange Money — numéros communiqués après demande). Un organisateur valide votre place
+            dès réception du signalement de paiement.
+          </p>
+        </div>
+
+        <div class="split reveal">
+          <form
+            class="form"
+            action={`https://formsubmit.co/${email}`}
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Inscription exposant — RDV Décembre" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <label>
+              Nom complet
+              <input type="text" name="nom" required autocomplete="name" />
+            </label>
+            <label>
+              Entreprise / activité
+              <input type="text" name="entreprise" required />
+            </label>
+            <label>
+              Type de service
+              <input type="text" name="service" required placeholder="Ex. digital, conseil, beauté…" />
+            </label>
+            <label>
+              Téléphone WhatsApp
+              <input type="tel" name="telephone" required autocomplete="tel" />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>
+              Message (besoins stand, questions)
+              <textarea name="message" maxlength="1000"></textarea>
+            </label>
+            <p class="form__hint">
+              Tarifs sur demande. Après envoi, écrivez-nous à
+              <a href={`mailto:${email}`}>{email}</a>
+              pour recevoir les instructions de paiement.
+            </p>
+            <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+          </form>
+
+          <aside class="note">
+            <strong>Paiement</strong>
+            <ul style="margin:0.75rem 0 0;padding-left:1.1rem;color:var(--cream-muted)">
+              <li>Espèce</li>
+              <li>M-Pesa · Airtel Money · Orange Money</li>
+              <li>Pas de virement bancaire pour cette édition</li>
+              <li>Numéros Mobile Money : à préciser</li>
+            </ul>
+            <p style="margin:1rem 0 0;color:var(--cream-muted)">
+              Entrée visiteurs : <strong style="color:var(--cream)">gratuite</strong>.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="equipe">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Organisation</h2>
+          <p>Une équipe locale pour un événement sérieux, accueillant et bien tenu.</p>
+        </div>
+        <div class="people reveal">
+          <div class="person"><strong>Uriel Deborah</strong><span>Organisation</span></div>
+          <div class="person"><strong>Jeremie Muyela</strong><span>Organisation</span></div>
+          <div class="person"><strong>Jason Kalaba</strong><span>Organisation</span></div>
+          <div class="person"><strong>Nathan Bondo</strong><span>Organisation</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div>
+        <strong style="color:var(--cream)">Le Rendez-vous de Décembre</strong>
+        <p style="margin:0.35rem 0 0">Lubumbashi · Décembre 2026 · Dates et lieu à confirmer</p>
+        <p style="margin:0.35rem 0 0">
+          Contact :
+          <a href={`mailto:${email}`}>{email}</a>
+        </p>
+      </div>
+      <p style="margin:0">LinkedIn · TikTok · Instagram — bientôt</p>
+    </div>
+  </footer>
+</BaseLayout>

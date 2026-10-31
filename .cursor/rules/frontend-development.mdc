@@ -1,0 +1,16 @@
+---
+description: Développement frontend, composants, état et expérience utilisateur.
+globs: "**/*.{tsx,jsx,vue,svelte,astro}"
+alwaysApply: false
+---
+# Frontend Engineering
+
+- Conçois des composants à responsabilité claire, réutilisables lorsqu'un vrai besoin existe et faciles à tester.
+- Sépare les composants de présentation des règles métier complexes.
+- Évite les composants géants, les props incohérentes et les états dupliqués.
+- Choisis la gestion d'état la plus simple adaptée : état local d'abord, puis solution partagée si nécessaire.
+- Pour les formulaires : labels explicites, validation compréhensible, erreurs associées aux champs, prévention des doubles soumissions et retours de succès.
+- Prévois les états loading, empty, error, success, disabled et permission-denied pertinents.
+- Évite les appels réseau redondants et les mises à jour d'interface incohérentes.
+- Respecte les conventions du framework (Server/Client Components Next.js, routing, data fetching, etc.).
+- N'introduis pas de bibliothèque UI si le projet possède déjà un système de composants satisfaisant.

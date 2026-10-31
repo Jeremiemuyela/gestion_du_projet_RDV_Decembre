@@ -1,0 +1,15 @@
+---
+description: Responsive design, accessibilité et expérience multi-appareils.
+globs: "**/*.{tsx,jsx,css,scss,html,astro,vue,svelte}"
+alwaysApply: false
+---
+# Responsive Design & Accessibility
+
+- Conçois mobile-first lorsque cela convient au produit, puis vérifie les largeurs intermédiaires et desktop.
+- Évite les largeurs fixes fragiles, les débordements horizontaux et les textes illisibles.
+- Utilise une structure sémantique, des titres hiérarchisés, des labels et des noms accessibles.
+- Assure une navigation clavier logique, un focus visible et des contrôles utilisables sans souris.
+- Vérifie contrastes, tailles de cibles tactiles et messages d'erreur accessibles.
+- Fournis des textes alternatifs utiles aux images informatives ; laisse les images décoratives ignorables par les technologies d'assistance.
+- Respecte `prefers-reduced-motion` et ne communique jamais une information uniquement par la couleur ou l'animation.
+- Ne supprime pas les indicateurs de focus sans alternative équivalente.
