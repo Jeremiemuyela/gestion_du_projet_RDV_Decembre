@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offre de partenariat — Le Rendez-vous de Décembre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f3ea;
+        --card: #fffdf8;
+        --ink: #163028;
+        --muted: #3e564a;
+        --green: #0e5c3c;
+        --green-deep: #0a4630;
+        --gold: #c48414;
+        --gold-deep: #8a5a10;
+        --red: #b4232e;
+        --line: rgba(22, 48, 40, 0.14);
+        --font-display: "Cinzel", "Times New Roman", serif;
+        --font-body: "Outfit", system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--font-body);
+        font-size: 11pt;
+        line-height: 1.55;
+        background: #e8e2d4;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 1.25rem auto 2rem;
+        padding: 14mm 16mm 16mm;
+        background: var(--card);
+        box-shadow: 0 12px 32px rgba(22, 48, 40, 0.12);
+      }
+
+      .brand-bar {
+        height: 5px;
+        margin: -14mm -16mm 10mm;
+        background: linear-gradient(
+          90deg,
+          var(--gold) 0 33%,
+          var(--green) 33% 66%,
+          var(--red) 66% 100%
+        );
+      }
+
+      .letterhead {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        align-items: end;
+        padding-bottom: 0.85rem;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 1.1rem;
+      }
+
+      .letterhead img {
+        width: 200px;
+        height: auto;
+        display: block;
+      }
+
+      .pillars {
+        margin: 0.55rem 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.85rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .pillars li:nth-child(1) {
+        color: var(--green);
+      }
+      .pillars li:nth-child(2) {
+        color: var(--gold-deep);
+      }
+      .pillars li:nth-child(3) {
+        color: var(--red);
+      }
+
+      .meta {
+        text-align: right;
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .meta strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--green-deep);
+        margin-bottom: 0.2rem;
+      }
+
+      .meta a {
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .doc-type {
+        margin: 0 0 0.35rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--gold-deep);
+      }
+
+      h1 {
+        margin: 0 0 0.35rem;
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        color: var(--green-deep);
+        line-height: 1.25;
+      }
+
+      .slogan {
+        margin: 0 0 1.15rem;
+        color: var(--gold-deep);
+        font-weight: 500;
+      }
+
+      h2 {
+        margin: 1.15rem 0 0.4rem;
+        font-family: var(--font-display);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--green);
+      }
+
+      p {
+        margin: 0 0 0.75rem;
+      }
+
+      .levels {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        margin: 0.5rem 0 1rem;
+      }
+
+      .level {
+        border: 1px solid var(--line);
+        padding: 0.75rem 0.8rem;
+        background: #fff;
+      }
+
+      .level h3 {
+        margin: 0 0 0.35rem;
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+      }
+
+      .level--gold h3 {
+        color: var(--gold-deep);
+      }
+      .level--green h3 {
+        color: var(--green);
+      }
+      .level--red h3 {
+        color: var(--red);
+      }
+
+      .level p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .level ul {
+        margin: 0.45rem 0 0;
+        padding-left: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .level li {
+        margin-bottom: 0.25rem;
+      }
+
+      .note {
+        margin: 0.85rem 0 1rem;
+        padding: 0.75rem 0.9rem;
+        background: linear-gradient(180deg, #f8efd4 0%, #f3e6c0 100%);
+        border-left: 4px solid var(--gold);
+      }
+
+      .note p {
+        margin: 0;
+      }
+
+      .contact {
+        margin-top: 0.5rem;
+      }
+
+      .sign {
+        margin-top: 1.4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .sign .role {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0.15rem 0 0;
+      }
+
+      .footer {
+        margin-top: 1.75rem;
+        padding-top: 0.7rem;
+        border-top: 1px solid var(--line);
+        font-size: 0.75rem;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background: #fff;
+        }
+        .sheet {
+          margin: 0;
+          box-shadow: none;
+          width: auto;
+          min-height: auto;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .sheet {
+          width: auto;
+          margin: 1rem;
+          padding: 1.25rem;
+          min-height: 0;
+        }
+        .brand-bar {
+          margin: -1.25rem -1.25rem 1rem;
+        }
+        .letterhead,
+        .levels,
+        .sign {
+          grid-template-columns: 1fr;
+        }
+        .meta {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="sheet">
+      <div class="brand-bar" aria-hidden="true"></div>
+
+      <header class="letterhead">
+        <div>
+          <img
+            src="../public/brand/logoRDVD_hor_compact.png"
+            alt="Le Rendez-vous de Décembre"
+            width="200"
+            height="100"
+          />
+          <ul class="pillars">
+            <li>Réseauter</li>
+            <li>Exposer</li>
+            <li>Se développer</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <strong>Le Rendez-vous de Décembre</strong>
+          Événement pro · Lubumbashi<br />
+          Décembre 2026<br />
+          <a href="mailto:rendezvousdedecembre@gmail.com">rendezvousdedecembre@gmail.com</a>
+        </div>
+      </header>
+
+      <p class="doc-type">Document d’offre · remis aux partenaires</p>
+      <h1>Offre de partenariat</h1>
+      <p class="slogan">Exposez. Connectez. Soyez reconnus.</p>
+
+      <h2>L’événement</h2>
+      <p>
+        Le Rendez-vous de Décembre est un événement professionnel à Lubumbashi dédié aux
+        entrepreneurs et prestataires de services. Pendant trois jours, les participants
+        exposent leur activité, élargissent leur réseau et gagnent en reconnaissance —
+        avec un vote du public et un Gala le troisième soir (exposition jusqu’à 14&nbsp;h,
+        Gala dès 16&nbsp;h). Dates et lieu seront confirmés prochainement.
+      </p>
+
+      <h2>Pourquoi s’associer</h2>
+      <p>
+        En devenant partenaire, votre organisation s’associe à une vitrine sérieuse et
+        chaleureuse, ancrée localement, et bénéficie d’une présence auprès d’un public
+        d’entrepreneurs, de prestataires et de visiteurs venus découvrir, voter et
+        connecter.
+      </p>
+
+      <h2>Formules de partenariat</h2>
+      <div class="levels">
+        <section class="level level--gold">
+          <h3>Visibilité</h3>
+          <p>Faites connaître votre marque auprès des exposants et du public.</p>
+          <ul>
+            <li>Mention sur les supports de communication</li>
+            <li>Présence digitale liée à l’événement</li>
+            <li>Remerciements officiels</li>
+          </ul>
+        </section>
+        <section class="level level--green">
+          <h3>Présence</h3>
+          <p>Soyez au cœur du rendez-vous, sur site et dans les échanges.</p>
+          <ul>
+            <li>Espace ou stand partenaire</li>
+            <li>Accueil et networking</li>
+            <li>Visibilité renforcée pendant les trois jours</li>
+          </ul>
+        </section>
+        <section class="level level--red">
+          <h3>Temps fort</h3>
+          <p>Associez votre nom à un moment mémorable de l’édition.</p>
+          <ul>
+            <li>Lien au vote du public ou au Gala</li>
+            <li>Prise de parole ou remise de trophée</li>
+            <li>Mise en avant premium</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="note">
+        <p>
+          Les modalités, contreparties et tarifs de chaque formule sont communiqués
+          <strong>sur demande</strong>, selon le niveau d’engagement souhaité. Paiement
+          exposant / partenaire : espèce ou Mobile Money (M-Pesa, Airtel Money, Orange
+          Money) — numéros précisés lors de la validation. Pas de virement bancaire pour
+          cette édition.
+        </p>
+      </div>
+
+      <h2>Prochaine étape</h2>
+      <p class="contact">
+        Pour recevoir la fiche détaillée ou convenir d’un entretien, contactez le comité
+        d’organisation à
+        <a href="mailto:rendezvousdedecembre@gmail.com"><strong>rendezvousdedecembre@gmail.com</strong></a>.
+        Nous construisons avec vous une collaboration adaptée à vos objectifs.
+      </p>
+
+      <div class="sign">
+        <div>
+          <p><strong>Le comité d’organisation</strong></p>
+          <p class="role">
+            Uriel Deborah · Jeremie Muyela<br />
+            Jason Kalaba · Nathan Bondo
+          </p>
+        </div>
+        <div>
+          <p class="role">Lubumbashi · Décembre 2026</p>
+          <p class="role">rendezvousdedecembre@gmail.com</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span>Offre de partenariat — Le Rendez-vous de Décembre</span>
+        <span>RÉSEAUTER · EXPOSER · SE DÉVELOPPER</span>
+      </footer>
+    </article>
+  </body>
+</html>
